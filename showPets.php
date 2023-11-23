@@ -8,12 +8,14 @@ $sql = "select * from pet";
 
 $result = mysqli_query($conn, $sql);
 
+echo "<TABLE border='1'>";
 while($row = mysqli_fetch_assoc($result)) {
     $petname = $row['NAME'];
     $age = $row['age'];
     $breed = $row['breed'];
-    echo "$petname $age $breed<BR>";
+    echo "<TR><TD>$petname</TD><TD>$age</TD><TD>$breed</TD></TR>";
 }
+echo "</TABLE>";
 
 
 
